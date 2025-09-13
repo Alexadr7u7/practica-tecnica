@@ -17,6 +17,9 @@ interface CarouselItem {
 export class Carrusel {
   @ViewChild(Carousel) carousel!: Carousel;
 
+  constructor() {
+    Carousel.prototype.onTouchMove = () => {};
+  }
   carouselItems: CarouselItem[] = [
     {
       id: 1,
