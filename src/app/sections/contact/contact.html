@@ -1,14 +1,11 @@
 <div class="grid grid-cols-1 md:grid-cols-12 relative min-h-[728px]">
-  <!-- Imagen decorativa en medio -->
   <img
     src="assets/img/virgulilla.png"
     alt="decoración"
     class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[134px] h-[60px] z-30 pointer-events-none hidden lg:block md:block"
   />
-
-  <!-- LADO DERECHO (Formulario) -->
   <div
-    class="relative order-1 md:order-2 md:col-span-6 w-full flex items-center py-30 px-6 lg:px-25"
+    class="relative order-1 md:order-2 md:col-span-6 w-full flex items-center py-10 md:py-30 px-6 lg:px-25"
   >
     <div class="md:right-0 md:top-0 w-full lg:h-[600px] mx-auto">
       <form
@@ -22,7 +19,6 @@
           Contact Me
         </h1>
 
-        <!-- Nombre -->
         <input
           type="text"
           name="name"
@@ -40,7 +36,6 @@
           Name is required (3-30 characters)
         </div>
 
-        <!-- Email -->
         <input
           type="email"
           name="email"
@@ -60,7 +55,6 @@
           Please enter a valid email (max 40 chars)
         </div>
 
-        <!-- Mensaje -->
         <textarea
           name="message"
           ngModel
@@ -79,7 +73,6 @@
           Message is required (10-50 characters)
         </div>
 
-        <!-- Botón -->
         <button
           type="submit"
           [disabled]="contactForm.invalid"
@@ -91,7 +84,6 @@
     </div>
   </div>
 
-  <!-- LADO IZQUIERDO (Texto) -->
   <div
     class="order-2 md:order-1 bg-[#0f0f15] flex flex-col justify-center px-6 lg:px-25 py-12 lg:py-[200px] md:col-span-6 z-10 h-[272px] md:h-[352px] lg:h-[528px]"
   >

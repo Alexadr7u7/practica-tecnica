@@ -1,13 +1,10 @@
-<!-- Fondo solo a la derecha -->
 <div
-  class="absolute inset-y-0 right-0 hidden md:block lg::block md:w-[500px] lg:w-[895px] bg-primary-color"
+  class="absolute inset-y-0 right-0 md:w-[500px] lg:w-[895px] bg-primary-color"
 ></div>
 
-<div class="relative z-10 px-6 lg:px-24 mx-auto">
-  <!-- Grid para colocar el título en la derecha -->
+<div class="relative z-10 px-6 lg:px-24 py-10 md:py-30 mx-auto">
   <div class="grid grid-cols-1 md:grid-cols-2 mb-12">
     <div></div>
-    <!-- vacío a la izquierda -->
     <div class="flex items-center">
       <h1
         class="text-[32px] md:text-6xl lg:text-[56px] font-extrabold text-black md:text-white leading-tight"
@@ -16,7 +13,6 @@
       </h1>
     </div>
   </div>
-  <!-- Grid de proyectos (dos columnas normales) -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div
       *ngFor="let project of projects"

@@ -1,0 +1,3 @@
+.p-carousel-items-container {
+  touch-action: pan-y !important;
+}

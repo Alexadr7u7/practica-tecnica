@@ -23,13 +23,15 @@ body {
 .bg-second-color {
   background: #191921;
 }
-/* Ocultar flechas nativas de PrimeNG Carousel */
 .p-carousel-prev-button,
 .p-carousel-next-button {
   display: none !important;
 }
 
-/* Ocultar indicadores de paginación (puntitos) */
 .p-carousel-indicators {
   display: none !important;
+}
+
+.p-carousel-items-container {
+  touch-action: pan-y !important;
 }
