@@ -1,0 +1,47 @@
+<!-- Fondo solo a la derecha -->
+<div
+  class="absolute inset-y-0 right-0 hidden md:block lg::block md:w-[500px] lg:w-[895px] bg-primary-color"
+></div>
+
+<div class="relative z-10 px-6 lg:px-24 mx-auto">
+  <!-- Grid para colocar el título en la derecha -->
+  <div class="grid grid-cols-1 md:grid-cols-2 mb-12">
+    <div></div>
+    <!-- vacío a la izquierda -->
+    <div class="flex items-center">
+      <h1
+        class="text-[32px] md:text-6xl lg:text-[56px] font-extrabold text-black md:text-white leading-tight"
+      >
+        Explore some of the projects.
+      </h1>
+    </div>
+  </div>
+  <!-- Grid de proyectos (dos columnas normales) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div
+      *ngFor="let project of projects"
+      class="bg-second-color overflow-hidden hover:shadow-lg transition flex flex-col"
+    >
+      <img
+        [src]="project.image"
+        [alt]="project.title"
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-xl font-extrabold text-white">
+          {{ project.title }}
+        </h3>
+        <p class="mt-2 text-lg flex-1">
+          {{ project.description }}
+        </p>
+        <a
+          [href]="project.link"
+          target="_blank"
+          class="inline-block mt-4 px-10 py-5 text-white bg-[#f94f4f] hover:bg-[#FF9393] transition self-start"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

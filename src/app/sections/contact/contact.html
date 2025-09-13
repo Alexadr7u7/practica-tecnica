@@ -1,0 +1,119 @@
+<div class="grid grid-cols-1 md:grid-cols-12 relative min-h-[728px]">
+  <!-- Imagen decorativa en medio -->
+  <img
+    src="assets/img/virgulilla.png"
+    alt="decoración"
+    class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[134px] h-[60px] z-30 pointer-events-none hidden lg:block md:block"
+  />
+
+  <!-- LADO DERECHO (Formulario) -->
+  <div
+    class="relative order-1 md:order-2 md:col-span-6 w-full flex items-center py-30 px-6 lg:px-25"
+  >
+    <div class="md:right-0 md:top-0 w-full lg:h-[600px] mx-auto">
+      <form
+        #contactForm="ngForm"
+        (ngSubmit)="onSubmit(contactForm)"
+        class="flex flex-col gap-6 h-full"
+      >
+        <h1
+          class="text-[28px] md:text-[40px] lg:text-[56px] font-extrabold text-black mb-4"
+        >
+          Contact Me
+        </h1>
+
+        <!-- Nombre -->
+        <input
+          type="text"
+          name="name"
+          ngModel
+          maxlength="30"
+          minlength="3"
+          placeholder="Your Name"
+          required
+          class="text-lg border border-gray-300 placeholder-gray-400 p-3 focus:outline-none focus:ring-2 focus:ring-black-500 text-black"
+        />
+        <div
+          class="text-red-500 text-sm"
+          *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid"
+        >
+          Name is required (3-30 characters)
+        </div>
+
+        <!-- Email -->
+        <input
+          type="email"
+          name="email"
+          ngModel
+          maxlength="40"
+          placeholder="Your Email"
+          required
+          email
+          class="text-lg border border-gray-300 placeholder-gray-400 p-3 focus:outline-none focus:ring-2 focus:ring-black-500 text-black"
+        />
+        <div
+          class="text-red-500 text-sm"
+          *ngIf="
+            contactForm.submitted && contactForm.controls['email']?.invalid
+          "
+        >
+          Please enter a valid email (max 40 chars)
+        </div>
+
+        <!-- Mensaje -->
+        <textarea
+          name="message"
+          ngModel
+          minlength="10"
+          maxlength="50"
+          placeholder="Your Message"
+          required
+          class="text-lg border border-gray-300 placeholder-gray-400 p-3 focus:outline-none focus:ring-2 focus:ring-black-500 flex-1 text-black w-full"
+        ></textarea>
+        <div
+          class="text-red-500 text-sm"
+          *ngIf="
+            contactForm.submitted && contactForm.controls['message']?.invalid
+          "
+        >
+          Message is required (10-50 characters)
+        </div>
+
+        <!-- Botón -->
+        <button
+          type="submit"
+          [disabled]="contactForm.invalid"
+          class="px-10 py-5 bg-[#f94f4f] hover:bg-[#FF9393] text-white transition mt-auto disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LADO IZQUIERDO (Texto) -->
+  <div
+    class="order-2 md:order-1 bg-[#0f0f15] flex flex-col justify-center px-6 lg:px-25 py-12 lg:py-[200px] md:col-span-6 z-10 h-[272px] md:h-[352px] lg:h-[528px]"
+  >
+    <h1
+      class="text-white text-[28px] md:text-[40px] lg:text-[56px] font-extrabold leading-snug mb-8"
+    >
+      Get in Touch
+    </h1>
+
+    <p class="text-white text-lg md:text-xl mb-2">
+      Email:
+      <a
+        href="mailto:example@email.com"
+        class="underline hover:text-gray-300 text-lg"
+        >example@email.com</a
+      >
+    </p>
+    <p class="text-white text-lg md:text-xl">
+      Phone:
+      <a href="tel:+1234567890" class="underline hover:text-gray-300 text-lg"
+        >+1 234 567 890</a
+      >
+    </p>
+  </div>
+</div>
