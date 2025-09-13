@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,16 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  // Estado del menú
   isMenuOpen = false;
-
-  // Método para alternar el menú
+  constructor(private viewportScroller: ViewportScroller) {}
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  // Método para cerrarlo al hacer click en un link o fuera
   closeMenu() {
     this.isMenuOpen = false;
+  }
+  scrollToSection(section: string) {
+    this.isMenuOpen = false;
+    this.viewportScroller.scrollToAnchor(section);
   }
 }

@@ -1,37 +1,36 @@
 <header class="h-[80px] md:h-[178px] relative px-6">
-  <!-- Parte roja de fondo (solo desktop) -->
   <div
     class="hidden md:block absolute top-0 right-0 md:w-[538px] lg:w-1/2 h-full bg-primary-color -z-10"
   ></div>
 
-  <!-- Nav -->
   <nav class="flex items-center justify-between py-4 mx-auto max-w-6xl h-full">
     <!-- Logo -->
     <div class="flex items-center space-x-2">
       <img src="assets/img/logo.png" alt="Logo" class="h-[30px] w-auto" />
     </div>
 
-    <!-- Links desktop -->
     <div class="hidden md:flex items-center space-x-8 text-lg">
-      <a href="#about" class="text-white hover:font-bold">About</a>
-      <a href="#service" class="text-white hover:font-bold">Service</a>
+      <a (click)="scrollToSection('about')" class="text-white hover:font-bold"
+        >About</a
+      >
+      <a (click)="scrollToSection('service')" class="text-white hover:font-bold"
+        >Service</a
+      >
       <a href="#projects" class="text-white hover:font-bold">Projects</a>
 
       <a
-        href="#"
+        (click)="scrollToSection('contact')"
         class="bg-[#191921] text-white font-semibold px-10 py-5 hover:bg-[#434356] transition"
       >
         Schedule a Call
       </a>
     </div>
 
-    <!-- Botón hamburguesa / cerrar -->
     <button
       class="md:hidden w-8 h-8 flex items-center justify-center"
       (click)="isMenuOpen = !isMenuOpen"
       aria-label="Toggle Menu"
     >
-      <!-- Icono hamburguesa -->
       <svg
         *ngIf="!isMenuOpen"
         class="w-6 h-6"
@@ -47,7 +46,6 @@
         />
       </svg>
 
-      <!-- Icono cerrar -->
       <svg
         *ngIf="isMenuOpen"
         class="w-6 h-6"
@@ -65,27 +63,34 @@
     </button>
   </nav>
 
-  <!-- Menú móvil (pegado al header) -->
   <div
     *ngIf="isMenuOpen"
-    class="md:hidden absolute top-full right-6 w-[252px] bg-[#191921] z-50 h-[292]"
+    class="md:hidden absolute top-full right-6 w-[252px] bg-[#191921] z-50 h-[292px]"
   >
-    <!-- Links -->
     <nav
       class="flex flex-col space-y-6 text-lg text-center px-6 py-6 text-white"
     >
-      <a href="#about" (click)="isMenuOpen = false" class="hover:font-bold"
+      <a
+        (click)="scrollToSection('about')"
+        (click)="isMenuOpen = false"
+        class="hover:font-bold"
         >About</a
       >
-      <a href="#service" (click)="isMenuOpen = false" class="hover:font-bold"
+      <a
+        (click)="scrollToSection('service')"
+        (click)="isMenuOpen = false"
+        class="hover:font-bold"
         >Service</a
       >
-      <a href="#projects" (click)="isMenuOpen = false" class="hover:font-bold"
+      <a
+        (click)="scrollToSection('projects')"
+        (click)="isMenuOpen = false"
+        class="hover:font-bold"
         >Projects</a
       >
 
       <a
-        href="#"
+        (click)="scrollToSection('contact')"
         class="text-white font-semibold px-10 py-5 transition bg-[#f94f4f] hover:bg-[#FF9393]"
       >
         Schedule a Call
